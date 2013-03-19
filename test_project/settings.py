@@ -59,7 +59,7 @@ MEDIA_URL = ''
 
 STATIC_ROOT = ''
 
-STATIC_URL = '/static_changed/'
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
 )
