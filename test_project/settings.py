@@ -108,6 +108,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'some_app',
+    'other_app',
     # 'django.contrib.admin',
     # 'django.contrib.admindocs',
 )
