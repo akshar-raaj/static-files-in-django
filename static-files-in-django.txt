@@ -7,13 +7,13 @@ If you think you don't need this section, then skip to the next section titled *
 
 We will try everything inside a virtual environment. We name our virtual environment as staticvirt. So the command we need is **virtualenv staticvirt**.
 
-    akshar@akshar-Lenovo-G560:~$ virtualenv staticvirt
+    ~$ virtualenv staticvirt
 
 Next we need to start a Django project inside this virtualenv. Make sure you are inside the virtualenv and have activated it. Also make sure that you install Django inside your virtual environment as we don't want to pollute your system wide site packages.
 
-    akshar@akshar-Lenovo-G560:~$ cd staticvirt/
-    akshar@akshar-Lenovo-G560:~/staticvirt$ source bin/activate
-    (staticvirt)akshar@akshar-Lenovo-G560:~/staticvirt$ pip install django==1.4
+    ~$ cd staticvirt/
+    ~/staticvirt$ source bin/activate
+    (staticvirt)~/staticvirt$ pip install django==1.4
 
 Start a Django project.
 
@@ -25,7 +25,7 @@ Change to directory containing the project.
 
 Let's see the directory structure at this point.
 
-    (staticvirt)akshar@akshar-Lenovo-G560:~/staticvirt/test_project$ tree
+    (staticvirt)~/staticvirt/test_project$ tree
     .
     |-- manage.py
     `-- test_project
@@ -94,7 +94,7 @@ We need to create home.html for app some_app and it needs to go into templates. 
 
 Let's check our project directory structure, so as to remove any confusion.
 
-    akshar@akshar-Lenovo-G560:~/staticvirt/test_project$ tree -I *.pyc
+    ~/staticvirt/test_project$ tree -I *.pyc
     .
     |-- manage.py
     |-- some_app
@@ -118,7 +118,7 @@ We did not want .pyc files to be shown and so used a switch with *tree* to ignor
 
 Start the server. Make sure you have added your database settings.
 
-    (staticvirt)akshar@akshar-Lenovo-G560:~/staticvirt/test_project$ python manage.py runserver
+    (staticvirt)~/staticvirt/test_project$ python manage.py runserver
 
 Navigate to **http://127.0.0.1:8000/some_app/home**. Hereafter, we will call this page as home page of some_app. You should see the html we just wrote.
 
@@ -210,7 +210,7 @@ Let's create other_app/home.html inside templates/ directory.
 
 Check the directory structure at this point.
 
-    akshar@akshar-Lenovo-G560:~/staticvirt/test_project$ tree -I *.pyc
+    ~/staticvirt/test_project$ tree -I *.pyc
     .
     |-- manage.py
     |-- other_app
@@ -395,7 +395,7 @@ Refresh the urls for both the pages. You will see that h1 appears in italic on t
 
 Let's check the final directory structure which will help in case you have some issues.
 
-    (staticvirt)akshar@akshar-Lenovo-G560:~/staticvirt/test_project$ tree -I *.pyc
+    (staticvirt)~/staticvirt/test_project$ tree -I *.pyc
     .
     |-- manage.py
     |-- other_app
