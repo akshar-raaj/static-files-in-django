@@ -9,7 +9,7 @@ We will try everything inside a virtual environment. We name our virtual environ
 
     akshar@akshar-Lenovo-G560:~$ virtualenv staticvirt
 
-Next we need to start a Django project inside this virtualenv. Make sure you are inside the virtualenv and have activated it. Also make sure that you install django inside your virtual environment as we don't want to pollute your system wide site packages.
+Next we need to start a Django project inside this virtualenv. Make sure you are inside the virtualenv and have activated it. Also make sure that you install Django inside your virtual environment as we don't want to pollute your system wide site packages.
 
     akshar@akshar-Lenovo-G560:~$ cd staticvirt/
     akshar@akshar-Lenovo-G560:~/staticvirt$ source bin/activate
@@ -58,7 +58,7 @@ Check the contents of test_project/settings.py. Search for all the lines which c
         ....
     )
 
-Whatever we saw till here is the default setting provided to us by django. We have not made any modifications.
+Whatever we saw till here is the default setting provided to us by Django. We have not made any modifications.
 
 Let's create an app in which we will have a template and then we will write a static file, which will be a stylesheet, and will use that stylesheet in this template.
 
@@ -153,7 +153,7 @@ Refresh home page of some_app. You should see that the background of this page b
 
 ####Points to be noted
 
-* We did not make any changes to any of the static settings provided by django to us. We left the static settings as they were in default settings.py provided by django.
+* We did not make any changes to any of the static settings provided by Django to us. We left the static settings as they were in default settings.py provided by Django.
 * You don't need any change in your urls.py for serving your static files in development. You don't need to add staticfiles_urlpatterns(). Many a times, I got confused with this.
 * You do not need **python manage.py collectstatic** for serving static files in development.
 <br/>
@@ -163,8 +163,8 @@ Refresh home page of some_app. You should see that the background of this page b
 *   They are STATIC_URL, STATIC_ROOT, STATICFILES_FINDERS, STATICFILES_DIRS.
 *   Also, we have 'django.contrib.staticfiles' in INSTALLED_APPS.
 *   For now, forget about STATIC_ROOT and STATICFILES_DIRS. Even if you comment it or delete it from settings, your project will continue to work as it is working currently.
-*   We need 'django.contrib.staticfiles' in our INSTALLED_APPS if we want django's default server to serve static files.
-*   By django's default server, we mean **python manage.py runserver**, that's provided with django.
+*   We need 'django.contrib.staticfiles' in our INSTALLED_APPS if we want Django's default server to serve static files.
+*   By Django's default server, we mean **python manage.py runserver**, that's provided with Django.
 *   Django's default server will serve the static files at STATIC_URL. Notice that STATIC_URL is set to '/static/'. 
 
     That's why we have our static file, ie stylesheet, getting served at `http://127.0.0.1:8000/static/styles.css`. If you try to get it at `http://127.0.0.1:8000/static_changed/styles.css`, you will not be able to, you will get a 404 instead.
@@ -173,11 +173,11 @@ Refresh home page of some_app. You should see that the background of this page b
     
     This change was only to illustrate what is the purpose of STATIC_URL. Change it back to its default, i.e STATIC_URL='/static/'. 
 
-*   Next question is how does django know from where to read the static files or where to find the static files. That's where STATICFILES_FINDERS comes into picture.
+*   Next question is how does Django know from where to read the static files or where to find the static files. That's where STATICFILES_FINDERS comes into picture.
 
     Check that we have two entries in STATICFILES_FINDERS, i.e 'django.contrib.staticfiles.finders.FileSystemFinder' and 'django.contrib.staticfiles.finders.AppDirectoriesFinder'. You can ignore FileSystemFinder for now, if you wish you can go ahead and comment the FileSystemFinder line.
 
-    Appdirectoriesfinder tells django to look into static/ subdirectory of each app in INSTALLED_APPS while looking for static files. Remember, we have styles.css under static/ subdirectory of some_app. That's why django was able to find it and it got served properly by django server. 
+    Appdirectoriesfinder tells Django to look into static/ subdirectory of each app in INSTALLED_APPS while looking for static files. Remember, we have styles.css under static/ subdirectory of some_app. That's why Django was able to find it and it got served properly by Django server. 
 
     If you change the name of this subdirectory from 'static/' to something else, your static resources will not be served. Go ahead, try it.
 
@@ -266,7 +266,7 @@ Also, verify that home of some_app still has a red background at `http://127.0.0
 
 ####What happened here.
 
-When we made a request for /static/other_style.css, django knows that STATIC_URL is set to '/static/' which matches the first fragment of the url we provide and hence infers that we want it to serve a static file. So, it starts looking into static/ subdirectory of all the apps. It looks into 'static/' subdirectory of all apps because STATICFILES_FINDERS contains 'django.contrib.staticfiles.finders.AppDirectoriesFinder'. Since it finds a file called other_style.css in the static/ subdirectory of other_app, it serves it.
+When we made a request for /static/other_style.css, Django knows that STATIC_URL is set to '/static/' which matches the first fragment of the url we provide and hence infers that we want it to serve a static file. So, it starts looking into static/ subdirectory of all the apps. It looks into 'static/' subdirectory of all apps because STATICFILES_FINDERS contains 'django.contrib.staticfiles.finders.AppDirectoriesFinder'. Since it finds a file called other_style.css in the static/ subdirectory of other_app, it serves it.
 
 However, there is one problem with this approach. You must have noticed that we named the stylesheet of other_app as other_style.css. What if we wanted to name this stylesheet as styles.css. Let's try doing it.
 
@@ -372,7 +372,7 @@ Edit this file project_static/base.css and add the following content to it.
 
 So, we want to make h1 as italic across entire project.
 
-Django is still not aware about this file and will not serve it. For making django aware about this file we need to add the directory containing this file to STATICFILES_DIRS. So edit test_project/settings.py and add the required directory to STATICFILES_DIRS.
+Django is still not aware about this file and will not serve it. For making Django aware about this file we need to add the directory containing this file to STATICFILES_DIRS. So edit test_project/settings.py and add the required directory to STATICFILES_DIRS.
 
     STATICFILES_DIRS = ( 
         os.path.join(PROJECT_DIR, '../project_static'),
@@ -433,9 +433,9 @@ Let's check the final directory structure which will help in case you have some 
 
 ###About STATIC_ROOT
 
-* You should never require STATIC_ROOT in development if you are using django's runserver.
+* You should never require STATIC_ROOT in development if you are using Django's runserver.
 * Once you go to production, you can use it on the server. Django provides a management command called **collectstatic**, which will collect all the static resources, i.e the resources found in STATICFILES_DIRS and the resources found in static/ subdirectory of apps, into a single location defined by STATIC_ROOT.
-* STATIC_ROOT only comes into picture if you want to use **collectstatic** management command provided by django.
+* STATIC_ROOT only comes into picture if you want to use **collectstatic** management command provided by Django.
 
 Let's try it out.
 Create a directory named static_resources.
