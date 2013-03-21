@@ -1,0 +1,2 @@
+static-files-in-django
+======================
