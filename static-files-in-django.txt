@@ -1,8 +1,4 @@
-Many a times I started a Django project, I had difficulty setting up how static files should be served. And everytime this happened, I read Django documentation for serving static files, tried changing some values in settings.py and after some changes here and there it worked. I guess there are many like me who find themself in a similar situation.
-
-In this blog post, I intend to lessen the confusion about serving static files. We will see what settings need to be there for serving static files in development and what directory structure we should be using for static files. Then we will see the changes we need to make to serve the static files in production.
-
-By development, my assumption is that we have DEBUG=True and we are using django's default server.
+Serving static files, especially during development, is frequently a pain point. In this post, we will discuss the various settings and directory structure and how they interact with each other. Let's start with development when you have DEBUG = True.
 
 We will create a Django project from scratch so that we are fully aware about what file in what directory we are talking about. So, this blog post will be a little longer than it should be. We will try these things with Django 1.4, but these will work on Django 1.3 as well. I have not tested it with Django 1.2, so not sure about 1.2.
 
