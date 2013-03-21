@@ -386,6 +386,7 @@ Try to access url `127.0.0.1:8000/static/base.css`. You should see the contents 
 * It tries to find the static file i.e base.css in any of the directory defined in STATICFILES_DIRS.
 * Since we have only one directory defined in STATICFILES_DIRS, which is project_static, Django server tries to find this file inside this directory. It finds the file it is searching for in this directory and serves it.
 * Had it not found this file in any of the directory defined in STATICFILES_DIRS, it would have tried to find the file in static/ subdirectory of each of the apps defined in INSTALLED_APPS.
+* Notice that we still didn't need to add staticfiles_urlpatterns().
 
 For using this file in templates, we need to reference this stylesheet. Add the following line to both of the templates we defined.
 
