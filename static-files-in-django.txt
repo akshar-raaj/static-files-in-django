@@ -4,7 +4,7 @@ In this blog post, I intend to lessen the confusion about serving static files. 
 
 By development, my assumption is that we have DEBUG=True and we are using django's default server.
 
-We will create a Django project from scratch so that we are fully aware about what file in what directory we are talking about. So, this blog post will be a little longer than it should be. We will try these things with Django 1.4, buut these will work on Django 1.3 as well. I have not tested it with Django 1.2, so not sure about 1.2.
+We will create a Django project from scratch so that we are fully aware about what file in what directory we are talking about. So, this blog post will be a little longer than it should be. We will try these things with Django 1.4, but these will work on Django 1.3 as well. I have not tested it with Django 1.2, so not sure about 1.2.
 
 ###Setting up the project.
 If you think you don't need this section, then skip to the next section titled **Serving static files**. Just make sure to see the directory structure at the end of this section to get an idea of it, so that you will be comfortable in the next section.
@@ -81,7 +81,7 @@ Adding **templates** directory to TEMPLATE_DIRS require following changes for me
         os.path.join(PROJECT_DIR, '../templates'),
     )
 
-We need to create home.html for app some_app and it needs to go into templates. So, we create a templates file **templates/some_app/home.html**. We have the following content in the html file.
+We need to create home.html for app some_app and it needs to go into templates. So, we create a template file **templates/some_app/home.html**. We have the following content in the html file.
 
     <html>
         <body>
@@ -152,7 +152,7 @@ Refresh home page of some_app. You should see that the background of this page b
 
 * We did not make any changes to any of the static settings provided by django to us. We left the static settings as they were in default settings.py provided by django.
 * You don't need any change in your urls.py for serving your static files in development. You don't need to add staticfiles_urlpatterns(). Many a times, I got confused with this.
-* You do not need *python manage.py collectstatic* for serving static files in development.
+* You do not need **python manage.py collectstatic** for serving static files in development.
 <br/>
 ####How it works internally
 
