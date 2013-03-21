@@ -51,7 +51,14 @@ Check the contents of test_project/settings.py. Search for all the lines which c
     #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
     )
 
-Also there is one more place in settings.py which contain the substring *static*, which is INSTALLED_APPS. INSTALLED_APPS contain 'django.contrib.staticfiles'. Whatever we saw till here is the default setting provided to us by django. We have not made any modifications.
+    INSTALLED_APPS = ( 
+        ....
+        ....
+        'django.contrib.staticfiles',
+        ....
+    )
+
+Whatever we saw till here is the default setting provided to us by django. We have not made any modifications.
 
 Let's create an app in which we will have a template and then we will write a static file, which will be a stylesheet, and will use that stylesheet in this template.
 
