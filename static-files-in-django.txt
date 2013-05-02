@@ -3,7 +3,7 @@ Serving static files, especially during development, is frequently a pain point.
 We will create a Django project from scratch so that we are fully aware about what file in what directory we are talking about. So, this blog post will be a little longer than it should be. We will try these things with Django 1.4, but these will work on Django 1.3 as well. I have not tested it with Django 1.2, so not sure about 1.2.
 
 ###Setting up the project.
-If you think you don't need this section, then skip to the next section titled **Serving static files**. Just make sure to see the directory structure at the end of this section to get an idea of it, so that you will be comfortable in the next section.
+If you think you don't need this section, then skip to the next section titled <a href="#servee">Serving static files</a>. Just make sure to see the directory structure at the end of this section to get an idea of it, so that you will be comfortable in the next section.
 
 We will try everything inside a virtual environment. We name our virtual environment as staticvirt. So the command we need is **virtualenv staticvirt**.
 
@@ -122,6 +122,7 @@ Start the server. Make sure you have added your database settings.
 
 Navigate to **http://127.0.0.1:8000/some_app/home**. Hereafter, we will call this page as home page of some_app. You should see the html we just wrote.
 
+<a name="servee"></a>
 ###Serving static files.
 
 Let's edit home.html of some_app and add a stylesheet to it. There doesn't exist any stylesheet yet, we will create it after editing html.
