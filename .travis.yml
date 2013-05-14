@@ -6,8 +6,6 @@ install:
     - pip install -r requirements.txt --use-mirrors
     - pip install coveralls --use-mirrors
 script:
-    - python manage.py test some_app --settings=test_project.test_settings
-    - python manage.py test other_app --settings=test_project.test_settings
-    - coverage run --source=some_app manage.py test
+    - coverage run --source="." manage.py test some_app other_app --settings=test_project.test_settings
 after_success:
     - coveralls
