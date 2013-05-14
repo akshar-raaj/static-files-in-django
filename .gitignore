@@ -1,1 +1,4 @@
 *.pyc
+test.db
+.coverage
+htmlcov/
