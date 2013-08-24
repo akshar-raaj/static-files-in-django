@@ -2,3 +2,4 @@
 test.db
 .coverage
 htmlcov/
+gunicorn_process_id.txt
