@@ -1,3 +1,5 @@
+import time
+
 from fabric.api import run, env, cd
 from fabric.colors import green
 from fabric.context_managers import prefix
@@ -46,4 +48,5 @@ def deploy():
             install_requirements()
             collect_static_files()
             kill_running_gunicorn_process()
+            time.sleep(10)
             start_gunicorn_process()
