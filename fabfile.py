@@ -27,6 +27,7 @@ def collect_static_files():
     run('python manage.py collectstatic')
     print(green("Collected static files"))
 
+
 def kill_running_gunicorn_process():
     print(green("Killing gunicorn process"))
     run('kill -9 `cat gunicorn_process_id.txt`', pty=False)
