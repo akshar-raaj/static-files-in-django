@@ -57,7 +57,7 @@ MEDIA_ROOT = ''
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
 MEDIA_URL = ''
 
-STATIC_ROOT = ''
+STATIC_ROOT = os.path.join(PROJECT_DIR, ('../staticfiles/'))
 
 STATIC_URL = '/static/'
 
