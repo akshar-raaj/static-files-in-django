@@ -3,3 +3,5 @@ test.db
 .coverage
 htmlcov/
 gunicorn_process_id.txt
+gunicorn_access_log.txt
+gunicorn_error_log.txt
