@@ -1,3 +1,4 @@
 django==1.5.2
 fabric
 gunicorn
+boto
