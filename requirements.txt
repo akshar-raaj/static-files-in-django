@@ -1,11 +1,8 @@
 Django==1.5.2
 Fabric==1.8.0
 argparse==1.2.1
-boto==2.21.2
 coverage==3.6
 django-coverage==1.2.2
-django-redis==3.4.0
-django-storages==1.1.5
 ecdsa==0.10
 gunicorn==0.17.4
 ipdb==0.8
